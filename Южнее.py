@@ -14,6 +14,6 @@ if __name__ == '__main__':
     parser = CreateParser()
     namespace = parser.parse_args(sys.argv[1:])
     a = ''.join(namespace.arg).split(',')
-    a = list(map(lambda x: [x, get_core(x)[1]], a))
+    a = list(map(lambda x: [x, int(get_core(x)[1])], a))
     a.sort(key=lambda x: x[1])
     print(a[0][0])
